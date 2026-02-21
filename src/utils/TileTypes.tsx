@@ -5,4 +5,6 @@ export interface TileBase {
 	article?: string;
 	links?: string[];
 	onClick?: () => void;      // pour le composant React
+	x: number;
+	y: number;
 }
