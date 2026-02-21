@@ -44,11 +44,25 @@ import { Graph } from "./components/Graph";
 export default App
 */
 
+import { useTranslation } from 'react-i18next';
+
 export const App: React.FC = () => {
+	const { t, i18n } = useTranslation();
+
+	const toggleLanguage = () => {
+		i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr');
+	};
 	return (
 		<div style={{ padding: "20px" }}>
 			{/*<h1>Graphe Interactif</h1>*/}
+			<h1>{t('welcome')}</h1>
 			<Graph />
+			<button
+				onClick={toggleLanguage}
+				className="bg-sunset-500 text-white px-4 py-2 rounded"
+			>
+				{t('switch_language')}
+			</button>
 		</div>
 	);
 };
