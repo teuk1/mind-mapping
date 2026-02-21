@@ -7,7 +7,9 @@ i18n
 	.use(initReactI18next) // hook react
 	.init({
 		fallbackLng: 'fr',
-		debug: true,
+		debug: false,
+		showSupportNotice: false,
+
 		resources: {
 			fr: {
 				translation: {
