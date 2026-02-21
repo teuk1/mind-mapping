@@ -1,12 +1,8 @@
 import React from "react";
 
-interface TileProps {
-	title: string;
-	description: string;
-	onClick?: () => void;
-}
+import type {TileBase} from "../utils/TileTypes";
 
-export const Tile: React.FC<TileProps> = ({ title, description, onClick }) => {
+export const Tile: React.FC<TileBase> = ({ title, description, onClick }) => {
 	return (
 		<div
 			onClick={onClick}

@@ -14,6 +14,8 @@ my-graph-project/
 │   ├─ components/
 │   │   ├─ Graph.tsx  ← le graphe interactif
 │   │   └─ Tile.tsx   ← une tuile (node)
+│   ├─ utils/
+│   │   └─ tileRouter.ts
 │   └─ data/
 │       └─ graph.json ← JSON du graphe
 │

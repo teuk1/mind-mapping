@@ -23,6 +23,7 @@
     "id": "t3",
     "title": "Projet 1 - détail",
     "description": "Détail du projet 1",
-    "links": ["t1"]
+    "links": ["t1"],
+    "article": "Contenu détaillé de Projet 1 - détail..."
   }
 ]
