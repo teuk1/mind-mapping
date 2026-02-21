@@ -1,10 +1,10 @@
 export interface TileBase {
-	id?: string;               // optionnel pour le composant React
+	id?: string;          // optionnel car automatiquement initialisé si jamais
 	title: string;
 	description: string;
 	article?: string;
 	links?: string[];
-	onClick?: () => void;      // pour le composant React
 	x: number;
 	y: number;
+	onClick?: () => void;
 }

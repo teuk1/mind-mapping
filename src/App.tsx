@@ -1,15 +1,17 @@
 import './App.css'
 
+import React, { useState } from 'react';
 import { Graph } from "./components/Graph";
+
+import { SwitchViewMode } from './components/preferences/SwitchViewMode';
+import { SwitchLanguage } from './components/preferences/SwitchLanguage';
 
 import { useTranslation } from 'react-i18next';
 
 export const App: React.FC = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
+	const [mode, setMode] = useState<'recenter' | 'navigate'>('recenter');
 
-	const toggleLanguage = () => {
-		i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr');
-	};
 	return (
 		//V2
 		<div className="h-screen flex flex-col overflow-hidden">
@@ -25,17 +27,16 @@ export const App: React.FC = () => {
 
 			{/* Graph zone */}
 			<div className="flex-1 relative overflow-hidden">
-				<Graph />
+				<Graph mode={mode} />
 			</div>
 
 			{/* Toolbar Bottom */}
 			<div className="flex-none px-6 py-4 border-t flex justify-end">
-				<button
-					onClick={toggleLanguage}
-					className="bg-sunset-500 text-white px-4 py-2 rounded"
-				>
-					{t('switch_language')}
-				</button>
+				{/*Switch ViewMode*/}
+				<SwitchViewMode mode={mode} setMode={setMode} />
+
+				{/*Switch Language*/}
+				<SwitchLanguage />
 			</div>
 
 		</div>
