@@ -1,4 +1,4 @@
-# Quentin Leman - My mind map
+# My mind map
 
 A first react project 
 
