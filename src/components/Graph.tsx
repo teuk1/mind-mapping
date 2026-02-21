@@ -92,7 +92,9 @@ export const Graph: React.FC = () => {
 			{nodes.map(node => (
 				<Tile
 					key={node.id}
+					id={node.id}
 					title={node.title}
+					links={node.links}
 					description={node.description}
 					x={node.x || 0}
 					y={node.y || 0}
