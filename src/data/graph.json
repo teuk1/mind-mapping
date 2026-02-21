@@ -1,0 +1,28 @@
+[
+  {
+    "id": "root",
+    "title": "Bienvenue",
+    "description": "Tuile principale",
+    "links": ["t1", "t2"]
+  },
+  {
+    "id": "t1",
+    "title": "Projet 1",
+    "description": "Découverte de projet 1",
+    "links": ["t3"],
+    "article": "Contenu détaillé de Projet 1..."
+  },
+  {
+    "id": "t2",
+    "title": "Projet 2",
+    "description": "Découverte de projet 2",
+    "links": [],
+    "article": "Contenu détaillé de Projet 2..."
+  },
+  {
+    "id": "t3",
+    "title": "Projet 1 - détail",
+    "description": "Détail du projet 1",
+    "links": ["t1"]
+  }
+]
