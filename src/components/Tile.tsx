@@ -1,11 +1,11 @@
 // v3 - auto-déduction depuis JSON
 import React from "react";
 import { motion } from "framer-motion";
-import type { TileBase } from "../utils/TileTypes";
+import type { TileBase } from "../interfaces/Tile.interface";
 
 interface TileProps extends TileBase {
-	links?: string[];              // liens vers les enfants
 	navigate: (id: string) => void; // callback pour naviguer vers une autre tuile
+	mode: 'recenter' | 'navigate';  // mode actif
 }
 
 export const Tile: React.FC<TileProps> = ({
@@ -15,15 +15,28 @@ export const Tile: React.FC<TileProps> = ({
 	                                          x,
 	                                          y,
 	                                          links,
-	                                          onClick,
 	                                          navigate,
+	                                          mode,
+	                                          onClick,
                                           }) => {
 	const isHome = id === "root";
 	const hasSingleChild = links && links.length === 1;
 
+	const handleClick = () => {
+		if (links.length === 1 && mode === 'navigate') {
+			navigate(links[0]); // change de vue
+		} else if (mode === 'recenter') {
+			// ici on recentre la tuile sans changer la vue
+			// parent Graph.tsx gère l'animation / scroll
+			onClick?.();
+		} else {
+			onClick?.();
+		}
+	};
+
 	return (
 		<motion.div
-			onClick={onClick}
+			onClick={handleClick}
 			className="absolute w-36 p-4 rounded-lg shadow-lg bg-white flex flex-col justify-between cursor-pointer"
 			style={{
 				left: x - 72,
