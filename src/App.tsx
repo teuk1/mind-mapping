@@ -11,23 +11,15 @@ export const App: React.FC = () => {
 		i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr');
 	};
 	return (
-		/* V1<div>
-			{/!*<h1>Graphe Interactif</h1>*!/}
-			<h1>{t('welcome')}</h1>
-			<Graph />
-			<button
-				onClick={toggleLanguage}
-				className="bg-sunset-500 text-white px-4 py-2 rounded"
-			>
-				{t('switch_language')}
-			</button>
-		</div>*/
+		//V2
 		<div className="h-screen flex flex-col overflow-hidden">
 
 			{/* Toolbar Top */}
 			<div className="flex-none px-6 py-4 border-b">
 				<h1 className="text-xl font-semibold">
-					{t('welcome')}
+					<a href="/" className="hover:underline">
+						{t('welcome')}
+					</a>
 				</h1>
 			</div>
 

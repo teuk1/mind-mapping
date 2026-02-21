@@ -21,7 +21,11 @@ export const Graph: React.FC = () => {
 			const tile = getTileById(graphData, tileId);
 			if (tile) setCurrentTile(tile);
 		};
+
+		// Initialisation au chargement
 		router();
+
+		// Écoute popstate pour boutons navigateur
 		window.addEventListener("popstate", router);
 		return () => window.removeEventListener("popstate", router);
 	}, []);
